@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 import Container from "@/components/Container"
 import { Exam, ExamAnswer } from "@/types/exam"
+import { it } from "node:test"
 
 const ResultPage = () => {
     const [topic, setTopic] = useState<Exam[]>([])
@@ -40,8 +41,11 @@ const ResultPage = () => {
     useEffect(() => {
         // 計算正確率
         let correct = 0
-        userAnswer.forEach((item, index) => {
-            if (item.answer.toString() === answer[index]?.answer.toString()) {
+        userAnswer.forEach((item) => {
+            const answerCheck = answer
+                .find((answerItem) => answerItem.id === item.id)
+                ?.answer.toString()
+            if (item.answer.toString() === answerCheck) {
                 correct++
             }
         })
