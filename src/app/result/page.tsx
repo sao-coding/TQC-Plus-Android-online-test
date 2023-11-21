@@ -143,7 +143,7 @@ const ResultPage = () => {
                                         </div>
                                         {/* 若答案不正確 在此顯示正確答案 */}
                                         {userAnswer
-                                            .find((item) => item.id === item.id)
+                                            .find((question) => question.id === item.id)
                                             ?.answer.toString() !==
                                             answer
                                                 .find((answerItem) => answerItem.id === item.id)
