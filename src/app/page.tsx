@@ -34,14 +34,13 @@ const HomePage = () => {
                             value={total}
                             onChange={(e) => {
                                 // 不能小於 30 也不能負數 也不能大於 331
-                                // if (Number(e.target.value) < 30) {
-                                //     setTotal(30)
-                                // } else if (Number(e.target.value) > 331) {
-                                //     setTotal(331)
-                                // } else {
-                                //     setTotal(Number(e.target.value))
-                                // }
-                                setTotal(Number(e.target.value))
+                                if (Number(e.target.value) < 10) {
+                                    setTotal(10)
+                                } else if (Number(e.target.value) > 331) {
+                                    setTotal(331)
+                                } else {
+                                    setTotal(Number(e.target.value))
+                                }
                             }}
                         />
                         <div>題</div>
