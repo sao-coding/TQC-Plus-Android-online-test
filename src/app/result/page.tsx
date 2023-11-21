@@ -69,8 +69,13 @@ const ResultPage = () => {
                                     <h2>{item.title}</h2>
                                     {/* 若答案正確 顯示 正確 若答案不正確 顯示 錯誤 */}
                                     <div className='absolute top-0 right-4'>
-                                        {userAnswer[index]?.answer.toString() ===
-                                        answer[index]?.answer.toString() ? (
+                                        {/* 迴圈所有 userAnswer 跟 answer 找到相同 item.id 在顯示 正確或錯誤 */}
+                                        {userAnswer
+                                            .find((question) => question.id === item.id)
+                                            ?.answer.toString() ===
+                                        answer
+                                            .find((answerItem) => answerItem.id === item.id)
+                                            ?.answer.toString() ? (
                                             <div className='bg-green-500 font-bold text-slate-50 px-2 py-0.5 rounded-md shadow-md'>
                                                 正確
                                             </div>
@@ -84,23 +89,9 @@ const ResultPage = () => {
                                     <div className='flex flex-col space-y-4'>
                                         <div className='border-dashed border-2 border-slate-200 rounded-xl p-2'>
                                             你的答案：
-                                            {userAnswer[index].answer.map((item) => {
-                                                return (
-                                                    <div
-                                                        className='break-words border-b border-slate-200 py-2 last:border-0'
-                                                        key={item}
-                                                    >
-                                                        {item}
-                                                    </div>
-                                                )
-                                            })}
-                                        </div>
-                                        {/* 若答案不正確 在此顯示正確答案 */}
-                                        {userAnswer[index]?.answer.toString() !==
-                                            answer[index]?.answer.toString() && (
-                                            <div className='border-dashed border-2 border-slate-200 rounded-xl p-2'>
-                                                正確答案：
-                                                {answer[index]?.answer.map((item) => {
+                                            {userAnswer
+                                                .find((question) => question.id === item.id)
+                                                ?.answer.map((item) => {
                                                     return (
                                                         <div
                                                             className='break-words border-b border-slate-200 py-2 last:border-0'
@@ -110,6 +101,28 @@ const ResultPage = () => {
                                                         </div>
                                                     )
                                                 })}
+                                        </div>
+                                        {/* 若答案不正確 在此顯示正確答案 */}
+                                        {userAnswer
+                                            .find((item) => item.id === item.id)
+                                            ?.answer.toString() !==
+                                            answer
+                                                .find((answerItem) => answerItem.id === item.id)
+                                                ?.answer.toString() && (
+                                            <div className='border-dashed border-2 border-slate-200 rounded-xl p-2'>
+                                                正確答案：
+                                                {answer
+                                                    .find((answerItem) => answerItem.id === item.id)
+                                                    ?.answer.map((item) => {
+                                                        return (
+                                                            <div
+                                                                className='break-words border-b border-slate-200 py-2 last:border-0'
+                                                                key={item}
+                                                            >
+                                                                {item}
+                                                            </div>
+                                                        )
+                                                    })}
                                             </div>
                                         )}
                                     </div>
