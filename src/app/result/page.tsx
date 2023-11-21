@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useState, useEffect } from "react"
 import Container from "@/components/Container"
 import { Exam, ExamAnswer } from "@/types/exam"
@@ -13,6 +14,8 @@ const ResultPage = () => {
     // 正確率
     const [correct, setCorrect] = useState<number>(0)
 
+    const router = useRouter()
+
     useEffect(() => {
         // 取消 status 考試中
         localStorage.removeItem("status")
@@ -21,6 +24,11 @@ const ResultPage = () => {
     // 顯示剛剛作答的紀錄
     useEffect(() => {
         // 從 localStorage 取得 topic
+        // 若沒有 topic and answer 就跳轉到首頁
+        if (!localStorage.getItem("topic") || !localStorage.getItem("answer")) {
+            router.push("/")
+            return
+        }
         const data = JSON.parse(localStorage.getItem("topic") ?? "")
         setTopic(data)
         // 從 localStorage 取得 userAnswer
@@ -64,6 +72,26 @@ const ResultPage = () => {
                         <div className=''>
                             正確題數： {correct} / {topic.length}
                         </div>
+                    </div>
+                    <div className=''>
+                        {/* 若沒超過 60% 你死定了 */}
+                        {Math.round((correct / topic.length) * 100) < 60 && (
+                            <div className='text-red-500'>你死定了</div>
+                        )}
+                        {/* 若超過 60% 你還有救 */}
+                        {Math.round((correct / topic.length) * 100) >= 60 &&
+                            Math.round((correct / topic.length) * 100) < 80 && (
+                                <div className='text-green-500'>你還有救</div>
+                            )}
+                        {/* 若超過 80% 媽的在偷讀啊 */}
+                        {Math.round((correct / topic.length) * 100) >= 80 &&
+                            Math.round((correct / topic.length) * 100) < 90 && (
+                                <div className='text-green-500'>媽的在偷讀啊</div>
+                            )}
+                        {/* 若超過 90% 機掰不要偷看答案 */}
+                        {Math.round((correct / topic.length) * 100) >= 90 && (
+                            <div className='text-green-500'>幹不要偷看答案</div>
+                        )}
                     </div>
                 </div>
                 <div className='flex flex-col space-y-4'>
