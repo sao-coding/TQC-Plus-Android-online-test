@@ -7,8 +7,12 @@ import { Exam, ExamAnswer } from "@/types/exam"
 
 const TestPage = () => {
     const [topic, setTopic] = useState<Exam[]>([])
-    const [answer, setAnswer] = useState<ExamAnswer[]>([])
+    const [inputLength, setInputLength] = useState<number>(0)
     const router = useRouter()
+
+    useEffect(() => {
+        setInputLength(Array.from(document.querySelectorAll("input")).length)
+    }, [inputLength])
 
     useEffect(() => {
         // fetch("/api/create" 把 data  存到 localStorage
@@ -28,6 +32,24 @@ const TestPage = () => {
             setTopic(JSON.parse(localStorage.getItem("topic") ?? ""))
         }
     }, [])
+
+    useEffect(() => {
+        // 若是 localStorage 有 answer 就把使用者的答案 填入選項
+        if (localStorage.getItem("answer")) {
+            const answer: ExamAnswer[] = JSON.parse(localStorage.getItem("answer") ?? "")
+            // setAnswer(answer)
+            answer.forEach((item) => {
+                const inputs = Array.from(document.querySelectorAll("input"))
+                inputs.forEach((input) => {
+                    if (input.name === item.id) {
+                        if (item.answer.includes(input.value)) {
+                            input.checked = true
+                        }
+                    }
+                })
+            })
+        }
+    }, [inputLength])
 
     const submit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
