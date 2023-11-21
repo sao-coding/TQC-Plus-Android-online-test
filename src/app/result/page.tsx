@@ -169,16 +169,25 @@ const ResultPage = () => {
                             )
                         })}
                 </div>
-                <Link
-                    href='/'
-                    className='block  text-center mt-4 bg-slate-900 text-slate-50 px-4 py-2 rounded-md shadow-md hover:bg-slate-800 transition-colors duration-200 ease-in-out'
-                    onClick={() => {
-                        localStorage.removeItem("topic")
-                        localStorage.removeItem("answer")
-                    }}
-                >
-                    回首頁
-                </Link>
+                <div className='flex items-center w-full justify-between space-x-2'>
+                    {/* 回上一頁 */}
+                    <Link
+                        href='/test'
+                        className='block text-center mt-4 bg-slate-900 text-slate-50 px-4 py-2 rounded-md shadow-md hover:bg-slate-800 transition-colors duration-200 ease-in-out w-full'
+                    >
+                        回上一頁
+                    </Link>
+                    <Link
+                        href='/'
+                        className='block  text-center mt-4 bg-slate-900 text-slate-50 px-4 py-2 rounded-md shadow-md hover:bg-slate-800 transition-colors duration-200 ease-in-out w-full'
+                        onClick={() => {
+                            localStorage.removeItem("topic")
+                            localStorage.removeItem("answer")
+                        }}
+                    >
+                        回首頁
+                    </Link>
+                </div>
             </div>
         </Container>
     )
