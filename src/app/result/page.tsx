@@ -55,9 +55,16 @@ const ResultPage = () => {
     return (
         <Container>
             <div className='p-4 h-full w-full'>
-                <div className='flex items-center justify-between mb-10'>
+                <div className='flex flex-col items-center justify-between mb-8 space-y-2'>
                     <h1 className='text-3xl font-bold text-slate-900'>測驗結果</h1>
-                    <div className=''>正確率： {Math.round((correct / topic.length) * 100)}%</div>
+                    <div className='flex items-center space-x-4'>
+                        <div className=''>
+                            正確率： {Math.round((correct / topic.length) * 100)}%
+                        </div>
+                        <div className=''>
+                            正確題數： {correct} / {topic.length}
+                        </div>
+                    </div>
                 </div>
                 <div className='flex flex-col space-y-4'>
                     {answer.length > 0 &&
