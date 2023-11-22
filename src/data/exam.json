@@ -18,7 +18,7 @@
             },
             {
                 "id": "4",
-                "content": "\"compile fileTree(dir:'libs'"
+                "content": "compile fileTree(dir:'libs',include:['*.jar'])"
             }
         ],
         "answer": [
@@ -99,7 +99,7 @@
             },
             {
                 "id": "4",
-                "content": "\"MediaPlayer.setDataSource(Context context"
+                "content": "MediaPlayer.setDataSource(Context context, Uri uri);"
             }
         ],
         "answer": [
@@ -454,24 +454,24 @@
     },
     {
         "id": "3fc0c09c-7ae0-4896-98b2-b41ae84cbfe4",
-        "title": "\"在網路安全性設定功能，要自訂信任的憑證伺服器（Certificate Authority",
+        "title": "在網路安全性設定功能，要自訂信任的憑證伺服器（Certificate Authority, CA），需要在下列安全性設定檔的哪些標籤下進行設定？",
         "type": "multiple",
         "options": [
             {
                 "id": "1",
-                "content": " CA），需要在下列安全性設定檔的哪些標籤下進行設定？\""
-            },
-            {
-                "id": "2",
                 "content": "<base-config>"
             },
             {
-                "id": "3",
+                "id": "2",
                 "content": "<trust-anchors>"
             },
             {
-                "id": "4",
+                "id": "3",
                 "content": "<certificates>"
+            },
+            {
+                "id": "4",
+                "content": "<domain-config>"
             }
         ],
         "answer": [
@@ -562,24 +562,24 @@
     },
     {
         "id": "679ac4d7-4175-4d45-9bdd-07c0b466ed2f",
-        "title": "\"子母畫面（Picture-in-Picture",
+        "title": "子母畫面（Picture-in-Picture, PIP）模式讓應用程式在釘選視窗中執行影片活動，同時讓另一個活動在背景持續進行。如要宣告支援子母畫面的話，下列哪些配置參數需要設定為true？",
         "type": "multiple",
         "options": [
             {
                 "id": "1",
-                "content": " PIP）模式讓應用程式在釘選視窗中執行影片活動，同時讓另一個活動在背景持續進行。如要宣告支援子母畫面的話，下列哪些配置參數需要設定為true？\""
-            },
-            {
-                "id": "2",
                 "content": "android:resizeableActivity"
             },
             {
-                "id": "3",
+                "id": "2",
                 "content": "android:supportsPictureInPicture"
             },
             {
-                "id": "4",
+                "id": "3",
                 "content": "android:inMultiWindowAndroid"
+            },
+            {
+                "id": "4",
+                "content": "android:inPictureInPicture"
             }
         ],
         "answer": [
@@ -1228,7 +1228,7 @@
             },
             {
                 "id": "2",
-                "content": "\"在XML設定檔中定義android:oneshot=\"\"true\"\"可使AnimationDrawable執行時只執行一個循環\""
+                "content": "在XML設定檔中定義android:oneshot=\"true\"可使AnimationDrawable執行時只執行一個循環"
             },
             {
                 "id": "3",
@@ -2184,11 +2184,11 @@
             },
             {
                 "id": "3",
-                "content": "\"compile fileTree(dir:'libs'"
+                "content": "compile fileTree(dir:'libs',include:['*.jar'])"
             },
             {
                 "id": "4",
-                "content": "include:['*.jar'])\""
+                "content": "compile files('libs/httpclient.jar')"
             }
         ],
         "answer": [
@@ -2731,19 +2731,19 @@
         "options": [
             {
                 "id": "1",
-                "content": "\"public void onCallStateChanged(int state"
+                "content": "public void onCallStateChanged(int state,String incomingNumber)"
             },
             {
                 "id": "2",
-                "content": "String incomingNumber)\""
-            },
-            {
-                "id": "3",
                 "content": "public void onCellLocationChanged(CellLocation location)"
             },
             {
-                "id": "4",
+                "id": "3",
                 "content": "public void onDataConnectionStateChanged(int state)"
+            },
+            {
+                "id": "4",
+                "content": "public void onDataConnectionStateChanged(int state,int networkType)"
             }
         ],
         "answer": [
@@ -2835,19 +2835,19 @@
         "options": [
             {
                 "id": "1",
-                "content": "\"Log.i(string"
+                "content": "Log.i(string,string)"
             },
             {
                 "id": "2",
-                "content": "string)\""
+                "content": "Log.e(string,string)"
             },
             {
                 "id": "3",
-                "content": "\"Log.e(string"
+                "content": "Log.w(string,string)"
             },
             {
                 "id": "4",
-                "content": "string)\""
+                "content": "Log.v(string,string)"
             }
         ],
         "answer": [
@@ -3317,15 +3317,15 @@
             },
             {
                 "id": "2",
-                "content": "\"addURI(String authority"
+                "content": "addURI(String authority, String path, int code)方法的第二個變數path中可以使用#代表數字"
             },
             {
                 "id": "3",
-                "content": " String path"
+                "content": "addURI(String authority, String path, int code)方法的第二個變數path中可以使用*代表任意字串"
             },
             {
                 "id": "4",
-                "content": " int code)方法的第二個變數path中可以使用#代表數字\""
+                "content": "addURI(String authority, String path, int code)方法的第三個變數code可以為負數"
             }
         ],
         "answer": [
@@ -3448,19 +3448,19 @@
         "options": [
             {
                 "id": "1",
-                "content": "\"可以透過Context.getSharedPreferences(\"\"name\"\""
+                "content": "可以透過Context.getSharedPreferences(\"name\",0)取得"
             },
             {
                 "id": "2",
-                "content": "0)取得\""
+                "content": "有getBoolean(String key, boolean defValue), getString(String key, String defValue)...等方法"
             },
             {
                 "id": "3",
-                "content": "\"有getBoolean(String key"
+                "content": "如果在非PreferenceActivity中變更資料，需呼叫SharedPreferences.Editor.commit()方法"
             },
             {
                 "id": "4",
-                "content": " boolean defValue)"
+                "content": "寫入的內容在其他應用程式也一定能存取"
             }
         ],
         "answer": [
@@ -3523,24 +3523,24 @@
     },
     {
         "id": "0c06d020-a356-4f81-bec8-c351cb7bdfc4",
-        "title": "\"下列哪一項是呼叫startActivityForResult(Intent",
+        "title": "下列哪一項是呼叫startActivityForResult(Intent,int)方法時，後面的int類別的作用？",
         "type": "single",
         "options": [
             {
                 "id": "1",
-                "content": "int)方法時，後面的int類別的作用？\""
-            },
-            {
-                "id": "2",
                 "content": "用作Intent代號"
             },
             {
-                "id": "3",
+                "id": "2",
                 "content": "用作Resource代號"
             },
             {
-                "id": "4",
+                "id": "3",
                 "content": "用作識別的代號"
+            },
+            {
+                "id": "4",
+                "content": "用作Activity的代號"
             }
         ],
         "answer": [
@@ -3944,19 +3944,19 @@
         "options": [
             {
                 "id": "1",
-                "content": "\"Log.d(識別字串"
+                "content": "Log.d(識別字串,記錄內容)"
             },
             {
                 "id": "2",
-                "content": "記錄內容)\""
+                "content": "Log.e(記錄內容,代號)"
             },
             {
                 "id": "3",
-                "content": "\"Log.e(記錄內容"
+                "content": "Log.s(識別字串,記錄內容)"
             },
             {
                 "id": "4",
-                "content": "代號)\""
+                "content": "Log.d(記錄內容,代號)"
             }
         ],
         "answer": [
@@ -5529,24 +5529,24 @@
     },
     {
         "id": "64af0a9c-ed10-4be7-a3d2-8751be36000d",
-        "title": "\"在全名為tw.test.Sample的Activity中使用getSharedPreferences(\"\"test\"\"",
+        "title": "在全名為tw.test.Sample的Activity中使用getSharedPreferences(\"test\",0)時，Preferences的檔名下列哪一項正確？",
         "type": "single",
         "options": [
             {
                 "id": "1",
-                "content": "0)時，Preferences的檔名下列哪一項正確？\""
-            },
-            {
-                "id": "2",
                 "content": "tw.test_preferences.xml"
             },
             {
-                "id": "3",
+                "id": "2",
                 "content": "Sample_preferences.xml"
             },
             {
-                "id": "4",
+                "id": "3",
                 "content": "Sample.xml"
+            },
+            {
+                "id": "4",
+                "content": "test.xml"
             }
         ],
         "answer": [
@@ -5802,15 +5802,15 @@
             },
             {
                 "id": "2",
-                "content": "\"onStartCommand(Intent intent"
+                "content": "onStartCommand(Intent intent, int flags, int startId)"
             },
             {
                 "id": "3",
-                "content": " int flags"
+                "content": "jobFinished(JobParameters params, boolean wantsReschedule)"
             },
             {
                 "id": "4",
-                "content": " int startId)\""
+                "content": "onStopJob(JobParameters params)"
             }
         ],
         "answer": [
@@ -6321,24 +6321,24 @@
     },
     {
         "id": "ba3c3804-ea29-42aa-9359-e0c22ad123ea",
-        "title": "\"從一個Activity跳轉回到原呼叫的Activity時，經常傳入的RESULT_OK",
+        "title": "從一個Activity跳轉回到原呼叫的Activity時，經常傳入的RESULT_OK, RESULT_CANCELED參數是屬於下列哪一項型別？",
         "type": "single",
         "options": [
             {
                 "id": "1",
-                "content": " RESULT_CANCELED參數是屬於下列哪一項型別？\""
-            },
-            {
-                "id": "2",
                 "content": "int"
             },
             {
-                "id": "3",
+                "id": "2",
                 "content": "string"
             },
             {
-                "id": "4",
+                "id": "3",
                 "content": "double"
+            },
+            {
+                "id": "4",
+                "content": "list"
             }
         ],
         "answer": [
@@ -7777,19 +7777,19 @@
         "options": [
             {
                 "id": "1",
-                "content": "\"canvas.drawCircle(40"
+                "content": "canvas.drawCircle(40,40,50,paint);"
             },
             {
                 "id": "2",
-                "content": "40"
+                "content": "canvas.drawCircle(40,40,25,paint);"
             },
             {
                 "id": "3",
-                "content": "50"
+                "content": "canvas.drawRect(40,40,50,paint);"
             },
             {
                 "id": "4",
-                "content": "paint);\""
+                "content": "canvas.drawOval(40,40,25,paint);"
             }
         ],
         "answer": [
@@ -8386,15 +8386,15 @@
             },
             {
                 "id": "2",
-                "content": "\"onStatusChanged(String provider"
+                "content": "onStatusChanged(String provider, int status, Bundle extras)"
             },
             {
                 "id": "3",
-                "content": " int status"
+                "content": "onProviderEnabled(String provider)"
             },
             {
                 "id": "4",
-                "content": " Bundle extras)\""
+                "content": "onProviderDisabled(String provider)"
             }
         ],
         "answer": [
@@ -8646,24 +8646,24 @@
     },
     {
         "id": "de539a85-b1a8-4ac1-975a-2b5139f1cf47",
-        "title": "\"某一應用程式在使用Context#openFileOutput(\"\"test.txt\"\"",
+        "title": "某一應用程式在使用Context#openFileOutput(\"test.txt\",MODE_PRIVATE)並正確寫入資料後，下列哪些方式可正確讀取檔案？",
         "type": "multiple",
         "options": [
             {
                 "id": "1",
-                "content": "MODE_PRIVATE)並正確寫入資料後，下列哪些方式可正確讀取檔案？\""
+                "content": "透過Context#openFileInput(\"test.txt\")"
             },
             {
                 "id": "2",
-                "content": "\"透過Context#openFileInput(\"\"test.txt\"\")\""
+                "content": "透過new FileReader(\"/data/data/\" + this.getPackageName() + \"/files/data.txt\")"
             },
             {
                 "id": "3",
-                "content": "\"透過new FileReader(\"\"/data/data/\"\" + this.getPackageName() + \"\"/files/data.txt\"\")\""
+                "content": "透過new FileReader(\"test.txt\")"
             },
             {
                 "id": "4",
-                "content": "\"透過new FileReader(\"\"test.txt\"\")\""
+                "content": "透過new File(\"test.txt\")"
             }
         ],
         "answer": [
