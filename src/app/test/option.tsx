@@ -17,6 +17,7 @@ const Option = ({ id, type, option }: { id: string; type: string; option: Exam["
                 }
             })
         }
+        e.target.parentElement?.classList.toggle("bg-slate-50")
         e.target.parentElement?.classList.toggle("bg-slate-200")
     }
 
