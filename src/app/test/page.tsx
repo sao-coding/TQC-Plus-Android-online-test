@@ -46,6 +46,7 @@ const TestPage = () => {
                         if (item.answer.includes(input.value)) {
                             input.checked = true
                             // label
+                            input.parentElement?.classList.remove("bg-slate-50")
                             input.parentElement?.classList.add("bg-slate-200")
                         }
                     }
