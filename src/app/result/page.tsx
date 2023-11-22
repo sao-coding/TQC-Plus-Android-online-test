@@ -132,7 +132,9 @@ const ResultPage = () => {
                                     {/* 顯示使用者的答案 */}
                                     <div className='flex flex-col space-y-4'>
                                         <div className='border-dashed border-2 border-slate-200 rounded-xl p-2'>
-                                            你的答案：
+                                            <div className='font-bold border-b border-slate-200 pb-2'>
+                                                你的答案：
+                                            </div>
                                             {userAnswer
                                                 .find((question) => question.id === item.id)
                                                 ?.answer.map((item) => {
@@ -154,7 +156,9 @@ const ResultPage = () => {
                                                 .find((answerItem) => answerItem.id === item.id)
                                                 ?.answer.toString() && (
                                             <div className='border-dashed border-2 border-slate-200 rounded-xl p-2'>
-                                                正確答案：
+                                                <div className='font-bold border-b border-slate-200 pb-2'>
+                                                    正確答案：
+                                                </div>
                                                 {answer
                                                     .find((answerItem) => answerItem.id === item.id)
                                                     ?.answer.map((item) => {
