@@ -102,9 +102,14 @@ const ResultPage = () => {
                                     key={item.id}
                                     className='relative p-4 flex flex-col space-y-4 border-dashed border-2 border-slate-200 rounded-xl overflow-x-auto md:overflow-visible'
                                 >
-                                    <h2 className='text-xl font-bold text-slate-900'>
-                                        第 {index + 1} 題
-                                    </h2>
+                                    <div className='flex items-center'>
+                                        <h1 className='text-xl font-bold text-slate-900'>
+                                            第 {index + 1} 題
+                                        </h1>
+                                        <p className='text-slate-500 ml-2'>
+                                            {item.type === "single" ? "單選題" : "多選題"}
+                                        </p>
+                                    </div>
                                     <h2>{item.title}</h2>
                                     {/* 若答案正確 顯示 正確 若答案不正確 顯示 錯誤 */}
                                     <div className='absolute top-0 right-4'>

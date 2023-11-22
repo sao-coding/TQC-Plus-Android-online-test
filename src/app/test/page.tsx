@@ -182,9 +182,14 @@ const TestPage = () => {
                                 key={item.id}
                                 className='p-3 flex flex-col space-y-2 border-dashed border-2 border-slate-200 rounded-xl overflow-x-auto md:overflow-visible'
                             >
-                                <h2 className='text-xl font-bold text-slate-900'>
-                                    第 {index + 1} 題
-                                </h2>
+                                <div className='flex items-center'>
+                                    <h1 className='text-xl font-bold text-slate-900'>
+                                        第 {index + 1} 題
+                                    </h1>
+                                    <p className='text-slate-500 ml-2'>
+                                        {item.type === "single" ? "單選題" : "多選題"}
+                                    </p>
+                                </div>
                                 {/* 自動換行 */}
                                 <p className='break-words pb-2'>{item.title}</p>
                                 {item.options.map((option) => {
