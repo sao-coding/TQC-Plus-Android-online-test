@@ -5,7 +5,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-    title: "Next.js + TypeScript + Tailwind CSS",
+    title: "TQC+ Android 線上測驗系統",
     description: "Next.js + TypeScript + Tailwind CSS",
 }
 
