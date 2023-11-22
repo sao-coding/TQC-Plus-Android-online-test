@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation"
 import { useState, useEffect } from "react"
 import Container from "@/components/Container"
+import Option from "./option"
 import { Exam, ExamAnswer } from "@/types/exam"
 
 const TestPage = () => {
@@ -176,56 +177,23 @@ const TestPage = () => {
                         return (
                             <div
                                 key={item.id}
-                                className='p-4 flex flex-col space-y-4 border-dashed border-2 border-slate-200 rounded-xl overflow-x-auto md:overflow-visible'
+                                className='p-3 flex flex-col space-y-2 border-dashed border-2 border-slate-200 rounded-xl overflow-x-auto md:overflow-visible'
                             >
                                 <h2 className='text-xl font-bold text-slate-900'>
                                     第 {index + 1} 題
                                 </h2>
                                 {/* 自動換行 */}
-                                <p className='break-words'>{item.title}</p>
-                                {item.type === "single" ? (
-                                    <>
-                                        {item.options.map((option) => {
-                                            return (
-                                                <label
-                                                    key={option.id}
-                                                    htmlFor={option.content + option.id}
-                                                    className='break-words flex space-x-2 items-center border-b border-slate-200 pb-4'
-                                                >
-                                                    <input
-                                                        type='radio'
-                                                        name={item.id}
-                                                        value={option.content}
-                                                        id={option.content + option.id}
-                                                        className='w-4 h-4'
-                                                    />
-                                                    <div className=''>{option.content}</div>
-                                                </label>
-                                            )
-                                        })}
-                                    </>
-                                ) : (
-                                    <>
-                                        {item.options.map((option) => {
-                                            return (
-                                                <label
-                                                    key={option.id}
-                                                    htmlFor={option.content + option.id}
-                                                    className='break-words flex space-x-2 items-center border-b border-slate-200 pb-2'
-                                                >
-                                                    <input
-                                                        type='checkbox'
-                                                        name={item.id}
-                                                        value={option.content}
-                                                        id={option.content + option.id}
-                                                        className='w-4 h-4'
-                                                    />
-                                                    <div className=''>{option.content}</div>
-                                                </label>
-                                            )
-                                        })}
-                                    </>
-                                )}
+                                <p className='break-words pb-2'>{item.title}</p>
+                                {item.options.map((option) => {
+                                    return (
+                                        <Option
+                                            key={option.id}
+                                            id={item.id}
+                                            type={item.type}
+                                            option={option}
+                                        />
+                                    )
+                                })}
                             </div>
                         )
                     })}
