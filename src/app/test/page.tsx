@@ -45,6 +45,8 @@ const TestPage = () => {
                     if (input.name === item.id) {
                         if (item.answer.includes(input.value)) {
                             input.checked = true
+                            // label
+                            input.parentElement?.classList.add("bg-slate-200")
                         }
                     }
                 })
